@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gaussian Blur Experiment</title>
+    <style>
+      #container {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      canvas {
+        border: 1px solid #ccc;
+        max-width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gaussian Blur Manual Experiment Wasm</h1>
+
+    <input type="file" id="file-input" accept="image/*" />
+    <br /><br />
+    <label>Radius: <span id="radius-value">0</span></label>
+    <input
+      type="range"
+      id="radius-slider"
+      min="0"
+      max="15"
+      step="1"
+      value="0"
+    />
+
+    <input type="number" id="radius-number" min="0" max="15" value="0" />
+
+    <button id="apply-blur-btn">Apply Blur</button>
+
+    <div id="container">
+      <div>
+        <p>Original</p>
+        <canvas id="canvas-original"></canvas>
+      </div>
+      <div>
+        <p>Blurred</p>
+        <canvas id="canvas-blurred"></canvas>
+      </div>
+    </div>
+
+    <!-- <button id="download-btn">Download CSV</button> -->
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
